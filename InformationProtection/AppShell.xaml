@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="InformationProtection.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:InformationProtection"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar 
+        Shell.NavBarIsVisible="False">
+        <Tab Title="Шифруванння" >
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Title="Демонстрація роботи RSA">
+            <ShellContent ContentTemplate="{DataTemplate local:RSAConceptPage}"/>
+        </Tab>
+        <Tab Title="Налаштування" >
+            <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}"/>
+        </Tab>
+    </TabBar>
+    
+
+</Shell>

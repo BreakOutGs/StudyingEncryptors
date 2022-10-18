@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InformationProtection.SettingsPage"
+             >
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Label 
+            Text="Налаштування шифрів"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="18"/>
+
+            <Label Text="Шифр перестановки"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <HorizontalStackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="15">
+                <Label Text="Розмір блоків"
+                  Margin="0,5,0,0"/>
+                <Entry Placeholder="5" 
+                   x:Name="DisplacementBlockSizeEntry"/>
+                <Label Text="Ключ"
+                  Margin="0,5,0,0"/>
+                <Entry Placeholder="4,2,1,5,3"
+                   x:Name="DisplacementKeyEntry"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Шифр заміни"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+            <HorizontalStackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="15">
+                <Label Text="Зміщення заміни в алфавіті"/>
+                <Entry Placeholder="4"
+                   x:Name="ReplacementKeyEntry"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Шифр Полібія"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+            <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="15">
+                <Label Text="Мова алфавіту" Margin="5"/>
+                <Picker SelectedIndex="0" 
+                    x:Name="PolibiyLanguagePicker"
+                    Margin="5"/>
+                <Label Text="Ключ" 
+                   Margin="5"/>
+                <Entry Margin="5"
+                   x:Name="PolibiyKeyEntry"
+                   Text=""
+                   Placeholder="s, P, e, k, a"
+                   />
+            </HorizontalStackLayout>
+
+            <Label Text="Шифр Гронсфельда"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+            <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="15">
+                <Label Text="Seed комбінації" Margin="5"/>
+
+                <Entry Margin="5"
+                   x:Name="GronsfeldSeedEtry"
+                   Text=""
+                   Placeholder="64"
+                   />
+            </HorizontalStackLayout>
+            <Label Text="Шифр Біграм"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+            <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="15">
+                <Label Text="Seed комбінації" Margin="5"/>
+
+                <Entry Margin="5"
+                   x:Name="BigramSeedEntry"
+                   Text=""
+                   Placeholder="64"
+                   />
+            </HorizontalStackLayout>
+            <Label Text="Шифр Вернама"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+            <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="15">
+                <Label Text="Seed комбінації" Margin="5"/>
+
+                <Entry Margin="5"
+                   x:Name="WernamSeedEntry"
+                   Text=""
+                   Placeholder="64"
+                   />
+            </HorizontalStackLayout>
+
+            <Label Text="Шифр DES"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+            <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="15">
+                <Label Text="Кодове слово" Margin="5"/>
+
+                <Entry Margin="5"
+                   x:Name="DESCodeWordEntry"
+                   Text=""
+                   />
+            </HorizontalStackLayout>
+
+            <Label Text="Шифр RSA"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+            <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="15">
+                <Label Text="Відкритий ключ" Margin="5"/>
+                    <Entry Margin="5"
+                   x:Name="RSAPublicKeyEntry"
+                   Text=""
+                   />
+
+            </HorizontalStackLayout>
+                <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="15">
+                <Label Text="Закриий ключ" Margin="5"/>
+
+                <Entry Margin="5"
+                   x:Name="RSAPrivateKeyEntry"
+                   Text=""
+                   />
+            </HorizontalStackLayout>
+            <Button Text="Згенерувати нові ключі" MaximumWidthRequest="300" Clicked="GenerateRSAKeys"/>
+
+            <Label Text=""
+                TextColor="Red"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+               Margin="15"
+               IsVisible="True"
+               x:Name="WrongSettingsLabel"/>
+            <Button Text="Зберегти"
+                Clicked="SaveSettingsBtnClick"
+               />
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+
+</ContentPage>

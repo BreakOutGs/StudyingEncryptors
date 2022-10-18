@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InformationProtection.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Label
+                Text="Програма шифрувань"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            
+            <Label
+                Text="Зроблено Василем Динчуком"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+        
+            <Editor x:Name="InputTextEditor" Text="" Placeholder="Місце для розшифрованих даних" AutoSize="TextChanges"/>
+            <HorizontalStackLayout>
+                <Label 
+                    Text="Виберіть метод шифрування"
+                    Margin="0,10,0,0"/>
+                <Picker x:Name="EncryptMethodPicker" Margin="15,5,5,0"  />
+                
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Button
+                    x:Name="EncodeBtn"
+                    Text="Зашифрувати"
+                    SemanticProperties.Hint="Починає процес шифрування"
+                    Clicked="OnEncodeBtnClicked"
+                    HorizontalOptions="Center"
+                    Margin="15"/>
+                <Button
+                    x:Name="DecodeBtn"
+                    Text="Розшифрувати"
+                    SemanticProperties.Hint="Починає процес шифрування"
+                    Clicked="OnDecodeBtnClicked"
+                    HorizontalOptions="Center" 
+                    Margin="15"/>
+                
+            </HorizontalStackLayout>
+            <Editor x:Name="OutputTextEditor" Text="" AutoSize="TextChanges" Placeholder="Місце для зашифрованих даних"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

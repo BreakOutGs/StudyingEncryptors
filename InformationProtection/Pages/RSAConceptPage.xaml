@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InformationProtection.RSAConceptPage"
+             Title="RSAConceptPage">
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+        <HorizontalStackLayout BackgroundColor="LightGrey">
+            <ScrollView
+                MaximumHeightRequest="500">
+                <VerticalStackLayout
+                Margin="20"
+                Padding="20"
+                BackgroundColor="White">
+                    <Label Text="Користувач GSpeka" HorizontalOptions="Center"
+                       Margin="10"/>
+                    <Label Text="Приватний ключ" HorizontalOptions="Center"
+                       Margin="10"/>
+                    <Entry Margin="5"
+                           MaximumWidthRequest="200"
+                       Placeholder="Тут буде приватний ключ"
+                       IsReadOnly="True"
+                            x:Name="FirstUserPrivateKeyEntry"/>
+                    <Label Text="Публічний ключ" HorizontalOptions="Center"
+                       Margin="10"/>
+                    <Entry Margin="5"
+                           MaximumWidthRequest="200"
+                       Placeholder="Тут буде публічний ключ"
+                       IsReadOnly="True"
+                           x:Name="FirstUserPublicKeyEntry"/>
+                    <Button Text="Згенерувати ключі"
+                            Clicked="GenerateKeyButtonClicked1"/>
+                    <Label Text="Отриманий публічний ключ" HorizontalOptions="Center"
+                       Margin="10"/>
+                    <Entry Margin="5"
+                           MaximumWidthRequest="200"
+                       Placeholder="Тут буде отриманий ключ"
+                       IsReadOnly="True"
+                           x:Name="FirstUserReceivedPublicKeyEntry"/>
+                    <Button Text="Отримати ключ"
+                            Clicked="ReceiveKeyButtonClicked1"/>
+                    <Label Text="Повідомлення" 
+                           HorizontalOptions="Center"
+                        Margin="10"/>
+                    <Entry Text="Привіт, користувачу Anonimous"
+                           IsReadOnly="True"
+                           MaximumWidthRequest="200"
+                           x:Name="FirstUserMessageEntry"/>
+                    <Button Text="Відправити"
+                            Margin="10"
+                            Clicked="SendMessageButtonClicked1"/>
+
+                    <Label Text="Отримане повідомлення" 
+                           HorizontalOptions="Center"
+                        Margin="10"/>
+                    <Entry Text=""
+                           MaximumWidthRequest="200"
+                           IsReadOnly="True"
+                           x:Name="FirstUserReceivedMessage"/>
+                    
+                </VerticalStackLayout>
+            </ScrollView>
+            <ScrollView>
+                
+            <VerticalStackLayout
+                Margin="20"
+                Padding="20"
+                BackgroundColor="White">
+                    
+                <Label Text="Взаємодія"
+                       Margin="10"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Перехоплене повідомлення" 
+                           HorizontalOptions="Center"
+                        Margin="10"/>
+                <Entry Text=""
+                       MaximumWidthRequest="200"
+                        IsReadOnly="True"
+                       x:Name="InterceptedMessageEntry"/>
+            </VerticalStackLayout>
+                
+            </ScrollView>
+
+            <ScrollView
+                MaximumHeightRequest="500">
+                <VerticalStackLayout
+                Margin="20"
+                Padding="20"
+                BackgroundColor="White">
+                    <Label Text="Користувач Anonimous" HorizontalOptions="Center"
+                       Margin="10"/>
+                    <Label Text="Приватний ключ" HorizontalOptions="Center"
+                       Margin="10"/>
+                    <Entry Margin="5"
+                       Placeholder="Тут буде приватний ключ"
+                       IsReadOnly="True"
+                            x:Name="SecondUserPrivateKeyEntry"
+                           MaximumWidthRequest="200"/>
+                    <Label Text="Публічний ключ" HorizontalOptions="Center"
+                       Margin="10"/>
+                    <Entry Margin="5"
+                       Placeholder="Тут буде публічний ключ"
+                       IsReadOnly="True"
+                           x:Name="SecondUserPublicKeyEntry"
+                           MaximumWidthRequest="200"/>
+                    <Button Text="Згенерувати ключі"
+                            Clicked="GenerateKeyButtonClicked2"/>
+                    <Label Text="Отриманий публічний ключ" HorizontalOptions="Center"
+                       Margin="10"/>
+                    <Entry Margin="5"
+                       Placeholder="Тут буде отриманий ключ"
+                       IsReadOnly="True"
+                           MaximumWidthRequest="200"
+                            x:Name="SecondUserReceivedPublicKeyEntry"/>
+                    <Button Text="Отримати ключ"
+                            Clicked="ReceiveKeyButtonClicked2"/>
+                    <Label Text="Повідомлення" 
+                           HorizontalOptions="Center"
+                        Margin="10"/>
+                    <Entry Text="Привіт, користувачу GSpeka"
+                           IsReadOnly="True"
+                           MaximumWidthRequest="200"
+                           x:Name="SecondUserMessageEntry"/>
+                    <Button Text="Відправити"
+                            Margin="10"
+                            Clicked="SendMessageButtonClicked2"/>
+
+                    <Label Text="Отримане повідомлення" 
+                           HorizontalOptions="Center"
+                            Margin="10"/>
+                    <Entry Text=""
+                           IsReadOnly="True"
+                           MaximumWidthRequest="200"
+                           x:Name="SecondUserReceivedMessage"/>
+
+                </VerticalStackLayout>
+            </ScrollView>
+
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>
